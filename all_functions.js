@@ -15,14 +15,15 @@ function go_to_homepage() {
 
 function go_to_profile() {
     // Sends user to their profile
+    location.href = "profile.html"
 }
 
 function add_meal() {
     // Sends user to create meal for today
-    location.href = "register-today.html";
+    location.href = "meal.html";
 }
 
 function edit_meal() {
     // Sends user to edit meal
-    location.href = "register-today.html";
+    location.href = "meal.html";
 }

@@ -27,3 +27,15 @@ function edit_meal() {
     // Sends user to edit meal
     location.href = "meal.html";
 }
+
+function start_time_input(){
+    //Grabs start time from dropdown box
+    //var x = document.getElementById("inputGroupSelect01").addEventListener("change", function(e){
+    var x = document.getElementById("inputGroupSelect01");
+    var y = x.options[x.selectedIndex].text;
+    document.getElementById("demo").innerText= y;
+    //})
+    
+//})
+
+}

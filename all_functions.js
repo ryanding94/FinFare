@@ -28,6 +28,23 @@ function edit_meal() {
     location.href = "meal.html";
 }
 
+function Fin(userID, name, location, username, password, picture) {
+    this.id = userID;
+    this.name = name;
+    this.location = location;
+    this.username = username;
+    this.password = password;
+    this.picture = picture;
+}
+
+function Meal(startTime, endTime, location, userID, mealID) {
+    this.startTime = startTime;
+    this.endTime = endTime;
+    this.location = location;
+    this.userID = userID;
+    this.mealID = mealID;
+}
+
 function start_time_input(){
     //Grabs start time from dropdown box
     //var x = document.getElementById("inputGroupSelect01").addEventListener("change", function(e){

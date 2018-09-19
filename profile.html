@@ -32,32 +32,38 @@
     </nav>
 
     <div class="container">
-      <h2 class="pt-2">Update Profile</h2>
-      <div class="row">
-        <div class="col">
-          <img class="m-1 card-img-top" src="https://theoceanapi.azurewebsites.net/people/shelby-blue/image_2x">
-        </div>
-        <div class="col">
-            <div class="form-group row">
-                <label for="name" class="col-sm-4 col-form-label">Name</label> 
-                <div class="col-sm-10">
-                  <input id="name" name="name" placeholder="Full Name" class="form-control here" type="text">
-                </div>
+        <h2 class="pt-2">Update Profile</h2>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <img class="m-1 card-img-top" src="https://theoceanapi.azurewebsites.net/people/shelby-blue/image_2x">
             </div>
-            <div class="form-group row">
-                <label for="office" class="col-sm-4 col-form-label">Default Office</label> 
-                <div class="col-sm-10">
+            <div class="form-group col-md-6">
+                <label for="name" class="col col-form-label">Name</label> 
+                <div class="col">
+                    <input id="name" name="name" placeholder="Full Name" class="form-control here" type="text">
+                </div>
+                <label for="office" class="col col-form-label">Default Office</label> 
+                <div class="col">
                     <select class="custom-select" id="inputGroupSelect01">
-                      <option selected>Choose...</option>
-                      <option value="1">Dallas</option>
-                      <option value="2">Houston</option>
-                      <option value="3">New York</option>
+                        <option selected>Choose...</option>
+                        <option value="1">Dallas</option>
+                        <option value="2">Houston</option>
+                        <option value="3">New York</option>
                     </select>
                 </div>
+                <label for="username" class="col col-form-label">Username</label>
+                <div class="col">
+                    <input id="username" name="username" placeholder="myUsername" class="form-control here" type="text">
+                </div>
+                <label for="password" class="col col-form-label">Password</label>
+                <div class="col">
+                    <input id="password" name="password" placeholder="******" class="form-control here" type="text">
+                </div>
+                <div class="col pt-3">
+                    <button class="btn btn-primary" onclick="UpdateProfile()">Save Changes</button>
+                </div>
             </div>
         </div>
-      </div>
-      </div>
     </div>
     <script src="all_functions.js"></script>
   </body>

@@ -45,13 +45,13 @@ function Meal(startTime, endTime, location, userID, mealID) {
     this.mealID = mealID;
 }
 
-function start_time_input(){
+function CreateMeal(){
+
+    var NewMeal = new Meal();
     //Grabs start time from dropdown box
-    //var x = document.getElementById("inputGroupSelect01").addEventListener("change", function(e){
     var x = document.getElementById("inputGroupSelect01");
     var y = x.options[x.selectedIndex].text;
     document.getElementById("demo").innerText= y;
-    //})
     
 //})
 

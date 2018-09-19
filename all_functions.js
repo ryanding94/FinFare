@@ -47,12 +47,21 @@ function Meal(startTime, endTime, location, userID, mealID) {
 
 function CreateMeal(){
 
-    var NewMeal = new Meal();
+    var newMeal = new Meal();
+
     //Grabs start time from dropdown box
     var x = document.getElementById("inputGroupSelect01");
-    var y = x.options[x.selectedIndex].text;
-    document.getElementById("demo").innerText= y;
-    
-//})
+    //var y = x.options[x.selectedIndex].text;
+    newMeal.startTime = x.options[x.selectedIndex].text;
+    document.getElementById("demo").innerHTML = newMeal.startTime;
 
+    //Grabs end time from dropdown box
+    x = document.getElementById("inputGroupSelect02");
+    newMeal.endTime = x.options[x.selectedIndex].text;
+    document.getElementById("demo2").innerHTML = newMeal.endTime;
+
+    //Grabs office location from dropdown box
+    x = document.getElementById("inputGroupSelect03");
+    newMeal.location = x.options[x.selectedIndex].text;
+    document.getElementById("demo3").innerHTML = newMeal.location;
 }

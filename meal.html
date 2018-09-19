@@ -34,7 +34,7 @@
             <h2 class="pt-2">Select your lunch availability:</h1>
             <div>Start time: </div>
             <div class="input-group mb-3">
-                    <select class="custom-select" id="inputGroupSelect01" onchange = "start_time_input()">
+                    <select class="custom-select" id="inputGroupSelect01" onchange = "CreateMeal()">
                       <option selected>Choose...</option>
                       <option value="1">12:00</option>
                       <option value="2">12:30</option>
@@ -44,26 +44,27 @@
                   </div>
             <div>End time:</div>
             <div class="input-group mb-3">
-                    <select class="custom-select" id="inputGroupSelect01">
+                    <select class="custom-select" id="inputGroupSelect02" onchange = "CreateMeal()">
                       <option selected>Choose...</option>
                       <option value="1">12:30</option>
                       <option value="2">1:00</option>
                       <option value="3">1:30</option>
                     </select>
+                    <p id="demo2"></p>
                   </div>
             <div>Office Location: </div>
             <div class="input-group mb-3">
-                    <select class="custom-select" id="inputGroupSelect01">
+                    <select class="custom-select" id="inputGroupSelect03" onchange = "CreateMeal()">
                       <option selected>Choose...</option>
                       <option value="1">Dallas</option>
                       <option value="2">Houston</option>
                       <option value="3">New York</option>
                     </select>
+                    <p id="demo3"></p>
                   </div>
             <button class="btn btn-primary" onclick="register_lunch()">Sign me up!</button>
             <button class="btn btn-secondary" onclick="cancel_lunch()">Sorry, I can't make it.</button>
 
-            <p id="demo"></p>
 
         </div>
         <script src="all_functions.js"></script>

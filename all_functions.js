@@ -15,7 +15,10 @@ function go_to_homepage() {
 
 function go_to_profile() {
     // Sends user to their profile
-    location.href = "profile.html"
+    location.href = "profile.html";
+    // console.log("I'm here!"); 
+    // document.getElementById("profilename").placeholder = "Kendra Andersen";
+
 }
 
 function add_meal() {

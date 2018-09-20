@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {IMeal} from './aMeal';
 import {MealCard} from './MealCard'; 
 import {MealUpdate} from './MealUpdate';
 import {NavBar} from './Navbar'; 
@@ -12,6 +13,7 @@ interface IAppState{
   name: string;
   office: string;
   image: string; 
+  meals: IMeal[]
 }
 
 class App extends React.Component<{}, IAppState> {
@@ -19,6 +21,11 @@ class App extends React.Component<{}, IAppState> {
     super(props); 
     this.state = {
       image: "https://theoceanapi.azurewebsites.net/people/shelby-blue/image_2x", 
+      meals:[{
+        endTime: "12:30",
+        location: "1",
+        startTime: "12:00"
+      }],
       name: "Shelby Blue",
       office: "1",
       page: 0,
@@ -27,7 +34,7 @@ class App extends React.Component<{}, IAppState> {
   public renderSelectedPage = () => {
     if (this.state.page === 0) {
       // Homepage
-      return <MealCard />
+      return <MealCard meal={this.state.meals[0]}/>
     } else if (this.state.page === 1) {
       // Profile
       return <Profile name={this.state.name} office={this.state.office} image={this.state.image} onNewName={this.onUpdateName} onNewOffice={this.onUpdateOffice}/>

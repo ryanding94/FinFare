@@ -12,7 +12,7 @@ export class MealCard extends React.Component {
                         <div className="row width=25%">
                             <div className="col">
                                 {/* Each image needs to be passed in */}
-                                <img className="m-1 card-img-top" src="https://cdn4.iconfinder.com/data/icons/gray-toolbar-8/512/xxx046-512.png"/>
+                                <img className="m-1 card-img-top" src="https://theoceanapi.azurewebsites.net/people/shelby-blue/image_2x"/>
                             </div>
                             <div className="col">
                                 <img className="m-1 card-img-top" src="https://cdn4.iconfinder.com/data/icons/gray-toolbar-8/512/xxx046-512.png"/>

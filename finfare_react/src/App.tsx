@@ -22,13 +22,19 @@ interface IAppState{
   // 0 is homepage
   // 1 is my profile
   // 2 is add a meal
+  name: string;
+  office: string;
+  image: string; 
 }
 
 class App extends React.Component<{}, IAppState> {
   constructor(props:any) {
     super(props); 
     this.state = {
-      page: 0
+      image: "https://theoceanapi.azurewebsites.net/people/shelby-blue/image_2x", 
+      name: "Shelby Blue",
+      office: "1",
+      page: 0,
     }
   }  
   public renderSelectedPage = () => {
@@ -37,15 +43,20 @@ class App extends React.Component<{}, IAppState> {
       return <MealCard />
     } else if (this.state.page === 1) {
       // Profile
-      return <Profile />
+      return <Profile name={this.state.name} office={this.state.office} image={this.state.image} onNewName={this.onUpdateName} onNewOffice={this.onUpdateOffice}/>
     } else {
       // Add meal
       return <MealUpdate />
     }
-    return <div>whyy</div>
   }
   public onSelectPage = (newPage:number) => { 
     this.setState({page: newPage})
+  }
+  public onUpdateName = (newName:string) => {
+    this.setState({name: newName})
+  }
+  public onUpdateOffice = (newOffice:string) => {
+    this.setState({office: newOffice})
   }
   public render() {
     return (

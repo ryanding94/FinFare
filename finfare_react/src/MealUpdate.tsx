@@ -30,8 +30,8 @@ export class MealUpdate extends React.Component<{}, IMealUpdate> {
             <h2 className="pt-2">Select your lunch availability:</h2>
             <div>Start time: </div>
             <div className="input-group mb-3">
-                    <select className="custom-select" id="inputGroupSelect01">
-                      <option selected= {true}>Choose...</option>
+                    <select className="custom-select" defaultValue="0">
+                      <option value="0">Choose...</option>
                       <option value="1">12:00</option>
                       <option value="2">12:30</option>
                       <option value="3">1:00</option>
@@ -39,8 +39,8 @@ export class MealUpdate extends React.Component<{}, IMealUpdate> {
                   </div>
             <div>End time:</div>
             <div className="input-group mb-3">
-                    <select className="custom-select" id="inputGroupSelect02">
-                      <option selected= {true}>Choose...</option>
+                    <select className="custom-select" defaultValue="0">
+                      <option value="0">Choose...</option>
                       <option value="1">12:30</option>
                       <option value="2">1:00</option>
                       <option value="3">1:30</option>
@@ -48,8 +48,8 @@ export class MealUpdate extends React.Component<{}, IMealUpdate> {
                   </div>
             <div>Office Location: </div>
             <div className="input-group mb-3">
-                    <select className="custom-select" id="inputGroupSelect03">
-                      <option selected = {true}>Choose...</option>
+                    <select className="custom-select" defaultValue="0">
+                      <option value="0">Choose...</option>
                       <option value="1">Dallas</option>
                       <option value="2">Houston</option>
                       <option value="3">New York</option>

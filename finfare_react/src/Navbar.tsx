@@ -26,7 +26,7 @@ export class NavBar extends React.Component<INavBarState> {
                     <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                         {/* The active element needs to update by page state */}
                         {/* The onClick function needs to update to the correct page */}
-                        <li className="nav-item active">
+                        <li className="nav-item">
                             <a className="nav-link" href="#" onClick={this.onSelect(0)}>Home <span className="sr-only">(current)</span></a>
                         </li>
                         <li className="nav-item">

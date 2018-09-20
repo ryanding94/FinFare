@@ -48,23 +48,35 @@ function Meal(startTime, endTime, location, userID, mealID) {
     this.mealID = mealID;
 }
 
-function CreateMeal(){
+var Meals = new Array();
 
-    var newMeal = new Meal();
+var newMeal = new Meal();
+//newMeal.startTime = "12:00";
+//localStorage.setItem("MealKey", newMeal);
+//document.getElementById("MealStart").innerHTML = newMeal.startTime;
+
+function CreateMeal(){
 
     //Grabs start time from dropdown box
     var x = document.getElementById("inputGroupSelect01");
     //var y = x.options[x.selectedIndex].text;
     newMeal.startTime = x.options[x.selectedIndex].text;
-    document.getElementById("demo").innerHTML = newMeal.startTime;
+    //document.getElementById("demo").innerHTML = newMeal.startTime;
 
     //Grabs end time from dropdown box
     x = document.getElementById("inputGroupSelect02");
     newMeal.endTime = x.options[x.selectedIndex].text;
-    document.getElementById("demo2").innerHTML = newMeal.endTime;
+    //document.getElementById("demo2").innerHTML = newMeal.endTime;
 
     //Grabs office location from dropdown box
     x = document.getElementById("inputGroupSelect03");
     newMeal.location = x.options[x.selectedIndex].text;
-    document.getElementById("demo3").innerHTML = newMeal.location;
+    //document.getElementById("demo3").innerHTML = newMeal.location;
+
+    Meals.push(newMeal);
+    document.getElementById("demo5").innerHTML = Meals[0].startTime;
+}
+
+function FetchMeal(){
+    document.getElementById("MealStart").innerHTML = newMeal.startTime;
 }

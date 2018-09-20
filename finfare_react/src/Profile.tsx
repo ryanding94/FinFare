@@ -36,8 +36,10 @@ export class Profile extends React.Component<IProfile> {
                                 <option value="2">Houston</option>
                                 <option value="3">New York</option>
                             </select>
+                            <button className="mt-2 btn btn-primary float-right" >Save</button>
                         </div>
                     </div>
+
                 </div>
             </div>
         );

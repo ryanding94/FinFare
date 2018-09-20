@@ -40,7 +40,12 @@ class App extends React.Component<{}, IAppState> {
       return <Profile name={this.state.name} office={this.state.office} image={this.state.image} onNewName={this.onUpdateName} onNewOffice={this.onUpdateOffice}/>
     } else {
       // Add meal
-      return <MealUpdate />
+      const newMeal: IMeal={
+        endTime: "0",
+        location: this.state.office,
+        startTime: "0",
+      };
+      return <MealUpdate meal={newMeal} />
     }
   }
   public onSelectPage = (newPage:number) => { 

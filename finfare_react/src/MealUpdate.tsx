@@ -39,7 +39,7 @@ export class MealUpdate extends React.Component {
                       <option value="3">New York</option>
                     </select>
                   </div>
-            <button className="btn btn-primary" >Sign me up!</button>
+            <button className="mr-2 btn btn-primary" >Sign me up!</button>
             <button className="btn btn-secondary">Sorry, I can't make it.</button>
         </div>
 

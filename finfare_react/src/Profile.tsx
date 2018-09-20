@@ -9,20 +9,12 @@ interface IProfile {
 }
 
 export class Profile extends React.Component<IProfile> {
-    // constructor(props: any) {
-    //     super(props); 
-    // }
     public newName = (e: React.ChangeEvent<HTMLInputElement>) => {
         this.props.onNewName(e.target.value)
     }
     public newOffice = (e: React.ChangeEvent<HTMLSelectElement>) => {
         this.props.onNewOffice(e.target.value)
-    }
-    // public saveChanges = () => {
-    //     this.setState({password:"**"});
-    //     // Reload input boxes here
-    // }
-    
+    }    
     public render() {
         return (
             <div className="container">
@@ -45,17 +37,6 @@ export class Profile extends React.Component<IProfile> {
                                 <option value="3">New York</option>
                             </select>
                         </div>
-                        {/* <label className="col col-form-label">Username</label>
-                        <div className="col">
-                            <input placeholder={this.state.username} onChange={this.newUsername} className="form-control here" type="text" />
-                        </div>
-                        <label className="col col-form-label">Password</label>
-                        <div className="col">
-                            <input placeholder="******" onChange={this.newPassword} className="form-control here" type="text" />
-                        </div> */}
-                        {/* <div className="col pt-3">
-                            <button className="btn btn-primary" onClick={this.saveChanges}>Save Changes</button>
-                        </div> */}
                     </div>
                 </div>
             </div>

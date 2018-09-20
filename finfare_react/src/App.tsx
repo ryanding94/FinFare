@@ -1,21 +1,8 @@
 import * as React from 'react';
-// import * as ReactDOM from 'react-dom'; 
-// import {BrowserRouter} from 'react-router-dom'; 
 import {MealCard} from './MealCard'; 
 import {MealUpdate} from './MealUpdate';
 import {NavBar} from './Navbar'; 
 import {Profile} from './Profile';
-// import {Route} from 'react-router';  
-
-// ReactDOM.render(
-//   <BrowserRouter>
-//     <div>
-//       <Route path="/Profile" component={Profile}/>
-//       <Route path="/Home" component={MealCard}/>
-//       <Route path="/Meal" component={MealUpdate}/>
-//     </div>
-//   </BrowserRouter>
-// );
 
 interface IAppState{
   page: number

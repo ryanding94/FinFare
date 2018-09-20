@@ -1,10 +1,26 @@
 import * as React from 'react'; 
 
-export class MealUpdate extends React.Component {
-    public changePage = () => {
-        // Any button leads to homepage right now
-        this.setState({value: 0})
+interface IMealUpdate {
+  startTime: string;
+  endTime: string;
+  location: string;
+}
+
+export class MealUpdate extends React.Component<{}, IMealUpdate> {
+
+  constructor(props: any) {
+    super(props); 
+    this.state = {
+      endTime: "",
+      location: "",
+      startTime: "",   
     }
+  }
+
+    // public changePage = () => {
+    //     // Any button leads to homepage right now
+    //     this.setState({location: "Dallas"})
+    // }
 
     public render() {
         return(

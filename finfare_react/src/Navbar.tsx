@@ -7,13 +7,25 @@ interface INavBarState {
     // 2 is add a meal
 }
 
+// export class NavBar extends React.Component {
 export class NavBar extends React.Component<INavBarState> {
     public onUpdatePage = () => {
         // Change the page on the nav bar
         this.setState({pageNum: 0})
     }
-    
-    public render() {
+    // constructor(props) {
+    //     super(props)
+    //     this.state = {
+    //         pageNum: 0
+    //     }
+    //     this.onUpdatePage = this.onUpdatePage.bind(this)
+    // }
+    // onUpdatePage(e) {
+    //     this.setState({
+    //         pageNum: e.target.value
+    //     })
+    // }
+        public render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <a className="navbar-brand" href="#">
@@ -25,6 +37,8 @@ export class NavBar extends React.Component<INavBarState> {
                 </button> 
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+                        {/* The active element needs to update by page state */}
+                        {/* The onClick function needs to update to the correct page */}
                         <li className="nav-item active">
                             <a className="nav-link" href="#" onClick={this.onUpdatePage}>Home <span className="sr-only">(current)</span></a>
                         </li>

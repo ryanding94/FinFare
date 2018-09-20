@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {MealCard} from './MealCard'; 
 import {MealUpdate} from './MealUpdate';
 import {NavBar} from './Navbar'; 
 
@@ -22,6 +23,7 @@ class App extends React.Component<{}, IPageState> {
       <div>
         <NavBar pageNum={this.state.page}/>
         <MealUpdate />
+        <MealCard />
       </div>
     );
   }

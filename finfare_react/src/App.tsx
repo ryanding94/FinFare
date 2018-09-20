@@ -2,6 +2,7 @@ import * as React from 'react';
 import {MealCard} from './MealCard'; 
 import {MealUpdate} from './MealUpdate';
 import {NavBar} from './Navbar'; 
+import {Profile} from './Profile'; 
 
 interface IPageState{
   page: number
@@ -24,6 +25,7 @@ class App extends React.Component<{}, IPageState> {
         <NavBar pageNum={this.state.page}/>
         <MealUpdate />
         <MealCard />
+        <Profile />
       </div>
     );
   }

@@ -5,27 +5,14 @@ interface INavBarState {
     // 0 is homepage
     // 1 is my profile
     // 2 is add a meal
+    onSelected: (pageNum: number) => void
 }
 
-// export class NavBar extends React.Component {
 export class NavBar extends React.Component<INavBarState> {
-    public onUpdatePage = () => {
-        // Change the page on the nav bar
-        this.setState({pageNum: 0})
+    public onSelect(newPage: number){
+        return () => this.props.onSelected(newPage); 
     }
-    // constructor(props) {
-    //     super(props)
-    //     this.state = {
-    //         pageNum: 0
-    //     }
-    //     this.onUpdatePage = this.onUpdatePage.bind(this)
-    // }
-    // onUpdatePage(e) {
-    //     this.setState({
-    //         pageNum: e.target.value
-    //     })
-    // }
-        public render() {
+    public render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <a className="navbar-brand" href="#">
@@ -40,13 +27,13 @@ export class NavBar extends React.Component<INavBarState> {
                         {/* The active element needs to update by page state */}
                         {/* The onClick function needs to update to the correct page */}
                         <li className="nav-item active">
-                            <a className="nav-link" href="#" onClick={this.onUpdatePage}>Home <span className="sr-only">(current)</span></a>
+                            <a className="nav-link" href="#" onClick={this.onSelect(0)}>Home <span className="sr-only">(current)</span></a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#" onClick={this.onUpdatePage}>My Profile</a>
+                            <a className="nav-link" href="#" onClick={this.onSelect(1)}>My Profile</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#" onClick={this.onUpdatePage}>Add a new meal</a>
+                            <a className="nav-link" href="#" onClick={this.onSelect(2)}>Add a new meal</a>
                         </li>
                     </ul>
                 </div>        

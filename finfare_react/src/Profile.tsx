@@ -16,8 +16,8 @@ export class Profile extends React.Component {
                         </div>
                         <label className="col col-form-label">Default Office</label> 
                         <div className="col">
-                            <select className="custom-select" id="inputGroupSelect01">
-                                <option selected={true}>Choose...</option>
+                            <select className="custom-select" defaultValue="0" id="inputGroupSelect01">
+                                <option value="0">Choose...</option>
                                 <option value="1">Dallas</option>
                                 <option value="2">Houston</option>
                                 <option value="3">New York</option>

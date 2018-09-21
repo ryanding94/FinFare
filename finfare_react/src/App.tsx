@@ -13,7 +13,8 @@ interface IAppState{
   name: string;
   office: string;
   image: string; 
-  meals: IMeal[]
+  meals: IMeal[];
+  newMeal:IMeal
 }
 
 class App extends React.Component<{}, IAppState> {
@@ -29,6 +30,12 @@ class App extends React.Component<{}, IAppState> {
       // }],
       meals: [],
       name: "Shelby Blue",
+      newMeal: {
+        endTime: "",
+        id: 0,
+        location: "1",
+        startTime: ""
+      },
       office: "1",
       page: 0,
     }
@@ -52,13 +59,16 @@ class App extends React.Component<{}, IAppState> {
       return <Profile name={this.state.name} office={this.state.office} image={this.state.image} onNewName={this.onUpdateName} onNewOffice={this.onUpdateOffice} returnHome={this.returnHome}/>
     } else {
       // Add meal
-      const newMeal: IMeal={
-        endTime: "0",
-        id: this.state.meals.length, 
-        location: this.state.office,
-        startTime: "0",
-      };
-      return <MealUpdate meal={newMeal} onNewStartTime={this.onUpdateStart} onNewEndTime={this.onUpdateEnd} onNewLocation={this.onUpdateLoc} returnHome={this.returnHome}/>
+      // const newMeal: IMeal={
+      //   endTime: "0",
+      //   id: this.state.meals.length, 
+      //   location: this.state.office,
+      //   startTime: "0",
+      // };
+      // const tempMeal = {...this.state.newMeal, id:this.state.meals.length}; 
+      // this.setState({newMeal: tempMeal}); 
+      // this.setState({newMeal.id: this.state.meals.length})
+      return <MealUpdate meal={this.state.newMeal} onNewStartTime={this.onUpdateStart} onNewEndTime={this.onUpdateEnd} onNewLocation={this.onUpdateLoc} returnHome={this.returnHome}/>
     }
   }
   public onSelectPage = (newPage:number) => { 

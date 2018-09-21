@@ -22,12 +22,6 @@ class App extends React.Component<{}, IAppState> {
     super(props); 
     this.state = {
       image: "https://theoceanapi.azurewebsites.net/people/shelby-blue/image_2x", 
-      // meals:[{
-      //   endTime: "12:30",
-      //   id: 0,
-      //   location: "1",
-      //   startTime: "12:00"
-      // }],
       meals: [],
       name: "Shelby Blue",
       newMeal: {
@@ -53,21 +47,10 @@ class App extends React.Component<{}, IAppState> {
       //   return <MealCard meal={eachMeal} />
       // }
       // return <MealCard meal={this.state.meals[0]}/>
-      return <div>that's it</div>
     } else if (this.state.page === 1) {
       // Profile
       return <Profile name={this.state.name} office={this.state.office} image={this.state.image} onNewName={this.onUpdateName} onNewOffice={this.onUpdateOffice} returnHome={this.returnHome}/>
     } else {
-      // Add meal
-      // const newMeal: IMeal={
-      //   endTime: "0",
-      //   id: this.state.meals.length, 
-      //   location: this.state.office,
-      //   startTime: "0",
-      // };
-      // const tempMeal = {...this.state.newMeal, id:this.state.meals.length}; 
-      // this.setState({newMeal: tempMeal}); 
-      // this.setState({newMeal.id: this.state.meals.length})
       return <MealUpdate meal={this.state.newMeal} onNewStartTime={this.onUpdateStart} onNewEndTime={this.onUpdateEnd} onNewLocation={this.onUpdateLoc} returnHome={this.returnHome} onDeleteMeal={this.deleteMeal}/>
     }
   }
@@ -82,7 +65,6 @@ class App extends React.Component<{}, IAppState> {
     this.setState({newMeal: newMealOffice})
     this.setState({office: newOffice}); 
   }
-  // I really don't like the following 3 but idk how else to do it
   public onUpdateStart = (newTime:string, meal:IMeal) => {
     const newMeals = [...this.state.meals]; 
     const newMeal = {...newMeals[meal.id], startTime: newTime, location: this.state.office}; 

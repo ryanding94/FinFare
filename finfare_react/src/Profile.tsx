@@ -43,7 +43,6 @@ export class Profile extends React.Component<IProfile> {
                             <button className="mt-2 btn btn-primary float-right" onClick={this.confirmSave()}>Save</button>
                         </div>
                     </div>
-
                 </div>
             </div>
         );

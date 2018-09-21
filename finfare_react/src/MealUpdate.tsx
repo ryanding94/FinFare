@@ -11,20 +11,6 @@ interface IMealUpdate {
 }
 
 export class MealUpdate extends React.Component<IMealUpdate> {
-
-  // constructor(props: any) {
-  //   super(props); 
-  //   this.state = {
-  //     endTime: "",
-  //     location: "",
-  //     startTime: "",   
-  //   }
-  // }
-
-    // public changePage = () => {
-    //     // Any button leads to homepage right now
-    //     this.setState({location: "Dallas"})
-    // }
     public newStartTime = (e: React.ChangeEvent<HTMLSelectElement>) => {
       this.props.onNewStartTime(e.target.value, this.props.meal)
     }
@@ -41,10 +27,8 @@ export class MealUpdate extends React.Component<IMealUpdate> {
       this.props.onDeleteMeal(this.props.meal)
     }
     public render() {
-        return(
-        
+        return(        
         <div className="container">
-
             <h2 className="pt-5">Select your lunch availability:</h2>
             <div>Start time: </div>
             <div className="input-group mb-3">
@@ -76,7 +60,6 @@ export class MealUpdate extends React.Component<IMealUpdate> {
             <button className="mr-2 mb-2 btn btn-primary" onClick={this.confirmMeal()}>Sign me up!</button>
             <button className="mb-2 btn btn-secondary" onClick={this.deleteMeal}>Sorry, I can't make it.</button>
         </div>
-
         )
     }
 }

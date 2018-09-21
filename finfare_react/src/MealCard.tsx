@@ -21,13 +21,13 @@ export class MealCard extends React.Component<IMealCard> {
                                 <img className="m-1 card-img-top" src="https://theoceanapi.azurewebsites.net/people/shelby-blue/image_2x"/>
                             </div>
                             <div className="col">
-                                <img className="m-1 card-img-top" src="https://cdn4.iconfinder.com/data/icons/gray-toolbar-8/512/xxx046-512.png"/>
+                                <img className="m-1 card-img-top" src="https://theoceanapi.azurewebsites.net/people/ryan-carter/image_2x"/>
                             </div>
                             <div className="col">
-                                <img className="m-1 card-img-top" src="https://cdn4.iconfinder.com/data/icons/gray-toolbar-8/512/xxx046-512.png"/>
+                                <img className="m-1 card-img-top" src="https://theoceanapi.azurewebsites.net/people/aaron-boswell/image_2x?dateTime=636232947189900000"/>
                             </div>
                             <div className="col">
-                                <img className="m-1 card-img-top" src="https://cdn4.iconfinder.com/data/icons/gray-toolbar-8/512/xxx046-512.png"/>
+                                <img className="m-1 card-img-top" src="https://theoceanapi.azurewebsites.net/people/bruce-ballengee/image_2x?dateTime=636016716887400000"/>
                             </div>
                         </div>
                         <div className="mt-2">

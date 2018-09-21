@@ -68,7 +68,7 @@ class App extends React.Component<{}, IAppState> {
       // const tempMeal = {...this.state.newMeal, id:this.state.meals.length}; 
       // this.setState({newMeal: tempMeal}); 
       // this.setState({newMeal.id: this.state.meals.length})
-      return <MealUpdate meal={this.state.newMeal} onNewStartTime={this.onUpdateStart} onNewEndTime={this.onUpdateEnd} onNewLocation={this.onUpdateLoc} returnHome={this.returnHome}/>
+      return <MealUpdate meal={this.state.newMeal} onNewStartTime={this.onUpdateStart} onNewEndTime={this.onUpdateEnd} onNewLocation={this.onUpdateLoc} returnHome={this.returnHome} onDeleteMeal={this.deleteMeal}/>
     }
   }
   public onSelectPage = (newPage:number) => { 
@@ -101,6 +101,12 @@ class App extends React.Component<{}, IAppState> {
   }
   public returnHome = () => { 
     this.setState({page: 0});
+  }
+  public deleteMeal = (deleteMe:IMeal) => {
+    const newMeals = [...this.state.meals]; 
+    newMeals.splice(deleteMe.id, 1); 
+    this.setState({meals: newMeals}); 
+    this.setState({page: 0}); 
   }
   public render() {
     return (

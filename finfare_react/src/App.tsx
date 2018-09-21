@@ -78,6 +78,8 @@ class App extends React.Component<{}, IAppState> {
     this.setState({name: newName}); 
   }
   public onUpdateOffice = (newOffice:string) => {
+    const newMealOffice = {...this.state.newMeal, location: newOffice}; 
+    this.setState({newMeal: newMealOffice})
     this.setState({office: newOffice}); 
   }
   // I really don't like the following 3 but idk how else to do it

@@ -18,7 +18,7 @@ export class Profile extends React.Component<IProfile> {
     public render() {
         return (
             <div className="container">
-                <h2 className="pt-2">Update Profile</h2>
+                <h2 className="pt-5">Update Profile</h2>
                 <div className="form-row">
                     <div className="form-group col-md-6">
                         <img className="m-1 card-img-top" src={this.props.image} />

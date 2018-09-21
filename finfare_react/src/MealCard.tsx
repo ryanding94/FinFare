@@ -3,9 +3,13 @@ import {IMeal} from './aMeal';
 
 interface IMealCard {
     meal: IMeal
+    onEditMeal: (meal:IMeal) => void; 
 }
 
 export class MealCard extends React.Component<IMealCard> {
+    public editMeal = () => {
+        this.props.onEditMeal(this.props.meal)
+    }
     public render() {
         return (
             <div className="container">
@@ -34,7 +38,7 @@ export class MealCard extends React.Component<IMealCard> {
                             {/* This needs to be a timer method! */}
                             {/* <span>18 minutes remaining until lunch</span> */}
                             {/* This button needs to go to MealUpdate for this meal */}
-                            <button className="mt-2 btn btn-secondary float-right">I can't make it</button>
+                            <button className="mt-2 btn btn-secondary float-right" onClick={this.editMeal}>I can't make it</button>
                         </div>
                     </div>
                 </div>

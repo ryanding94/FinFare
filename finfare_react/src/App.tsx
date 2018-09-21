@@ -47,7 +47,7 @@ class App extends React.Component<{}, IAppState> {
       if (this.state.meals.length === 0) {
         return <div className="container"><h2 className="pt-5">You have no meals scheduled!</h2></div>
       } else {
-        return <MealCard meal={this.state.meals[0]}/>
+        return <MealCard meal={this.state.meals[0]} onEditMeal={this.onUpdateMeal}/>
       }
       // for (const eachMeal of this.state.meals) {
       //   return <MealCard meal={eachMeal} />
@@ -83,7 +83,7 @@ class App extends React.Component<{}, IAppState> {
   // I really don't like the following 3 but idk how else to do it
   public onUpdateStart = (newTime:string, meal:IMeal) => {
     const newMeals = [...this.state.meals]; 
-    const newMeal = {...newMeals[meal.id], startTime: newTime}; 
+    const newMeal = {...newMeals[meal.id], startTime: newTime, location: this.state.office}; 
     newMeals[meal.id] = newMeal; 
     this.setState({meals: newMeals}); 
   }
@@ -107,6 +107,10 @@ class App extends React.Component<{}, IAppState> {
     newMeals.splice(deleteMe.id, 1); 
     this.setState({meals: newMeals}); 
     this.setState({page: 0}); 
+  }
+  public onUpdateMeal = (editMe:IMeal) => {
+    this.setState({newMeal:editMe}); 
+    this.setState({page: 2}); 
   }
   public render() {
     return (

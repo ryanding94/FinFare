@@ -6,6 +6,7 @@ interface IMealUpdate {
     onNewStartTime: (newTime: string, meal:IMeal) => void; 
     onNewEndTime: (newTime: string, meal:IMeal) => void; 
     onNewLocation: (newLoc: string, meal:IMeal) => void; 
+    returnHome: () => void; 
 }
 
 export class MealUpdate extends React.Component<IMealUpdate> {
@@ -31,6 +32,9 @@ export class MealUpdate extends React.Component<IMealUpdate> {
     }
     public newLocation = (e: React.ChangeEvent<HTMLSelectElement>) => {
       this.props.onNewLocation(e.target.value, this.props.meal)
+    }
+    public confirmMeal() {
+      return () => this.props.returnHome(); 
     }
     public render() {
         return(
@@ -65,7 +69,7 @@ export class MealUpdate extends React.Component<IMealUpdate> {
                       <option value="3">New York</option>
                     </select>
                   </div>
-            <button className="mr-2 mb-2 btn btn-primary" >Sign me up!</button>
+            <button className="mr-2 mb-2 btn btn-primary" onClick={this.confirmMeal()}>Sign me up!</button>
             <button className="mb-2 btn btn-secondary">Sorry, I can't make it.</button>
         </div>
 

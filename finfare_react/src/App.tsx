@@ -49,7 +49,7 @@ class App extends React.Component<{}, IAppState> {
       return <div>that's it</div>
     } else if (this.state.page === 1) {
       // Profile
-      return <Profile name={this.state.name} office={this.state.office} image={this.state.image} onNewName={this.onUpdateName} onNewOffice={this.onUpdateOffice}/>
+      return <Profile name={this.state.name} office={this.state.office} image={this.state.image} onNewName={this.onUpdateName} onNewOffice={this.onUpdateOffice} returnHome={this.returnHome}/>
     } else {
       // Add meal
       const newMeal: IMeal={
@@ -58,7 +58,7 @@ class App extends React.Component<{}, IAppState> {
         location: this.state.office,
         startTime: "0",
       };
-      return <MealUpdate meal={newMeal} onNewStartTime={this.onUpdateStart} onNewEndTime={this.onUpdateEnd} onNewLocation={this.onUpdateLoc}/>
+      return <MealUpdate meal={newMeal} onNewStartTime={this.onUpdateStart} onNewEndTime={this.onUpdateEnd} onNewLocation={this.onUpdateLoc} returnHome={this.returnHome}/>
     }
   }
   public onSelectPage = (newPage:number) => { 
@@ -88,6 +88,9 @@ class App extends React.Component<{}, IAppState> {
     const newMeal = {...newMeals[meal.id], location: newLoc}; 
     newMeals[meal.id] = newMeal;
     this.setState({meals: newMeals});
+  }
+  public returnHome = () => { 
+    this.setState({page: 0});
   }
   public render() {
     return (

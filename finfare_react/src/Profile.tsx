@@ -6,6 +6,7 @@ interface IProfile {
     image: string; 
     onNewName: (name: string) => void;
     onNewOffice: (name: string) => void; 
+    returnHome: () => void; 
 }
 
 export class Profile extends React.Component<IProfile> {
@@ -14,7 +15,10 @@ export class Profile extends React.Component<IProfile> {
     }
     public newOffice = (e: React.ChangeEvent<HTMLSelectElement>) => {
         this.props.onNewOffice(e.target.value)
-    }    
+    } 
+    public confirmSave () {
+        return () => this.props.returnHome(); 
+    }   
     public render() {
         return (
             <div className="container">
@@ -36,7 +40,7 @@ export class Profile extends React.Component<IProfile> {
                                 <option value="2">Houston</option>
                                 <option value="3">New York</option>
                             </select>
-                            <button className="mt-2 btn btn-primary float-right" >Save</button>
+                            <button className="mt-2 btn btn-primary float-right" onClick={this.confirmSave()}>Save</button>
                         </div>
                     </div>
 

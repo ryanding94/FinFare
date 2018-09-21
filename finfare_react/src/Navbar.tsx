@@ -28,10 +28,10 @@ export class NavBar extends React.Component<INavBarState> {
                             <a className="nav-link" href="#" onClick={this.onSelect(0)}>Home <span className="sr-only">(current)</span></a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#" onClick={this.onSelect(1)}>My Profile</a>
+                            <a className="nav-link" href="#" onClick={this.onSelect(1)}>Profile</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#" onClick={this.onSelect(2)}>Add a new meal</a>
+                            <a className="nav-link" href="#" onClick={this.onSelect(2)}>Add new meal</a>
                         </li>
                     </ul>
                 </div>        
